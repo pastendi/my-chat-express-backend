@@ -1,7 +1,6 @@
 import mongoose from 'mongoose'
 import app from './app.js'
 import logger from './config/logger.js'
-const { DB_URL } = process.env
 // exit on mongodb error
 mongoose.connection.on('error', (err) => {
   logger.error(`Mongo conntection error: ${err}`)
@@ -13,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Connection
-mongoose.connect(DB_URL).then(() => {
+mongoose.connect(process.env.DB_URL).then(() => {
   logger.info('Connected to database')
 })
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import { login, register } from '../controllers/auth_controller.js'
+import { login, register } from '../controllers/authController.js'
 import trimRequest from 'trim-request'
 const router = express.Router()
 
